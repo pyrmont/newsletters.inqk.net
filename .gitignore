@@ -1,0 +1,6 @@
+*.swp
+Gemfile.lock
+/tmp/
+/src/.bundle
+/src/settings.json
+/src/vendor/
