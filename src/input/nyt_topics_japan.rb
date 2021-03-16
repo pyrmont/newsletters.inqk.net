@@ -15,6 +15,7 @@ class NytTopicsJapan
 
     entry = { title: "title",
               link: "link",
+              datetime: "pubDate",
               date: { path: "pubDate",
                       processor: lambda { |content, rule| format_date content } },
               byline: "dc|creator",
@@ -26,13 +27,13 @@ class NytTopicsJapan
   end
 
   def format_date(date)
-    published = Timeliness.parse date, :date
+    published = Timeliness.parse date
     published.strftime("%d %B %Y")
   end
 
   def keep?(entry)
     now = Time.now
-    published = Timeliness.parse entry["date"], :date
-    (now - published) < (24 * 60 * 60)
+    published = Timeliness.parse entry["datetime"]
+    now - published < (24 * 60 * 60)
   end
 end
