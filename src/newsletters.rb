@@ -15,7 +15,8 @@ def post(data)
   json = template.result_with_hash info: data[:info], entries: data[:entries]
   sg = SendGrid::API.new(api_key: data[:info]["api_key"])
   begin
-    sg.client.mail._("send").post(request_body: JSON.parse(json))
+    response = sg.client.mail._("send").post(request_body: JSON.parse(json))
+    raise response.body unless response.body.empty?
   rescue Exception => e
     puts e.message
   end
