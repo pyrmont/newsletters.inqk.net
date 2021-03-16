@@ -1,0 +1,20 @@
+{
+  "personalizations": [
+    {
+      "to": [
+        {
+          "email": "<%= info["to_email"] %>"
+        }
+      ],
+      "dynamic_template_data": {
+        "story": <%= entries.to_json %>
+      },
+      "subject": "<%= info["subject"] %>"
+    }
+  ],
+  "from": {
+    "email": "<%= info["from_email"] %>",
+    "name": "<%= info["from_name"] %>"
+  },
+  "template_id": "<%= info["template"] %>"
+}
