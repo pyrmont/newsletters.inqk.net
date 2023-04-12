@@ -1,0 +1,28 @@
+GIT
+  remote: https://github.com/pyrmont/feedstock.git
+  revision: 03aaadb3801160f711b3d67714844f69dd46d0a3
+  specs:
+    feedstock (0.4.0.pre.dev)
+      nokogiri
+      timeliness
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    nokogiri (1.14.3-x86_64-linux)
+      racc (~> 1.4)
+    racc (1.6.2)
+    ruby_http_client (3.5.5)
+    sendgrid-ruby (6.6.2)
+      ruby_http_client (~> 3.4)
+    timeliness (0.4.5)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  feedstock!
+  sendgrid-ruby
+
+BUNDLED WITH
+   2.4.10
